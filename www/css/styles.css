@@ -226,7 +226,7 @@ header{
 }
 
 .titleArea{
-	width:100%;
+	width:320px;
 	height:90px;
 	background-repeat:no-repeat;
 	background-color:#393;
@@ -240,23 +240,51 @@ header{
 }
 
 .checkBox{
-	width:60px;
-	height:60px;
-	background-color:#ffffff;
+	width:65px;
+	height:65px;
+	background-image:url(../images/buttons/checkbox.png);
+	background-size:100%;
+	background-position:center;
 	display:block;
 	float:left;
 	margin-left:10px;
-	margin-top:10px;
+	margin-top:5px;
 }
 
 .spotDetails{
 	width:60px;
 	height:60px;
-	background-color:#000000;
+	background-image:url(../images/buttons/showDetails.png);
+	background-size:100%;
+	background-position:center;
 	display:block;
 	float:right;
 	margin-right:10px;
 	margin-top:10px;
+}
+
+#tomahawk{
+	background-image:url(../images/spotTomahawk.jpg);
+	background-size:100%;
+	background-position:center;
+}
+
+#oakIsland{
+	background-image:url(../images/spotOakIsland.jpg);
+	background-size:100%;
+	background-position:center;
+}
+
+#kennedy{
+	background-image:url(../images/spotKennedy.jpg);
+	background-size:100%;
+	background-position:center;
+}
+
+#point{
+	background-image:url(../images/spotPoint.jpg);
+	background-size:100%;
+	background-position:center;
 }
 
 #map{

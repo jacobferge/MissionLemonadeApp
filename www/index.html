@@ -98,6 +98,8 @@
                             	<div id="tomahawkDetails" class="content">
                                 </div> <!-- tomahawkDetails -->
                             </li>
+                            
+                            <li>
                             	<div class="titleArea" id="oakIsland">
                                 	<a href="#" class="checkBox"></a>
                                 	<a href="#" class="spotDetails" rel="1"></a>
@@ -105,10 +107,22 @@
                                 
                             	<div id="oakIslandDetails" class="content">
                                 </div> <!-- oakIslandDetails -->
+                            </li>
+                            
+                            <li>
+                            	<div class="titleArea" id="kennedy">
+                                	<a href="#" class="checkBox"></a>
+                                	<a href="#" class="spotDetails" rel="2"></a>
+                                </div> <!-- kennedy -->
+                                
+                            	<div id="kennedyDetails" class="content">
+                                </div> <!-- kennedyDetails -->
+                            </li>
+                            
                             <li>
                             	<div class="titleArea" id="point">
                                 	<a href="#" class="checkBox"></a>
-                                	<a href="#" class="spotDetails" rel="2"></a>
+                                	<a href="#" class="spotDetails" rel="3"></a>
                                 </div> <!-- tomahawk -->
                                 
                                 <div id="pointDetails" class="content">
@@ -153,7 +167,9 @@
 		
 		objectArray[1]="#oakIslandDetails";
 		
-		objectArray[2]="#pointDetails";
+		objectArray[2]="#kennedyDetails";
+		
+		objectArray[3]="#pointDetails";
 		
 		var activeObject=null;
 		
@@ -171,6 +187,7 @@
 			
 			document.getElementById('tomahawkDetails').style.display = "none";
 			document.getElementById('oakIslandDetails').style.display = "none";
+			document.getElementById('kennedyDetails').style.display = "none";
 			document.getElementById('pointDetails').style.display = "none";
 			
 		});
@@ -490,13 +507,19 @@
 	$('.checkBox').on('tap', function(event){
 	
 		if(checkBox == true){
-			$(this).css('background-color', '#333');
+			
+			$(this).css('background-image', 'url(images/buttons/checkboxChecked.png)');
+			
 			checkBox = false;
+			
 			}
 		
 		else {
-			$(this).css('background-color', '#ffffff');
+			
+			$(this).css('background-image', 'url(images/buttons/checkbox.png)');
+			
 			checkBox = true;
+			
 			}
 		
 		event.preventDefault();
