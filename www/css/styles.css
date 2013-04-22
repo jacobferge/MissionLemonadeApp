@@ -1,184 +1,312 @@
-/* MOBILE STYLES: PORTRAIT */
-@media only screen and (max-width: 479px){
-	header{
-		width:100%;
-		height:50px;
-		background-color:#000000;
-		-moz-box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.5);
-		-webkit-box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.5);
-		box-shadow: 0 0px 5px 5px rgba(0,0,0,0.5);
-		position:fixed;
-	}
-	
-	h1{
-		font-size:22px;
-		letter-spacing:-.5px;
-		color:#ffffff;
-		height:100%;
-		line-height:50px;
-		margin-left:1.3%;
-	}
-	
-	#content{
-		float:left;
-		margin-top:50px;
-		width:100%;
-	}
-	
-	p{
-		font-size:16px;
-		line-height:24px;
-		width:97.4%;
-		margin-left:1.3%;
-		margin-bottom:20px;
-		color:#000000;
-	}
+body{
+	background-color:#000000;
 }
 
-/* MOBILE STYLES: LANDSCAPE */
-@media only screen and (min-width: 480px) and (max-width: 767px){
-	header{
-		width:100%;
-		height:50px;
-		background-color:#000000;
-		-moz-box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.5);
-		-webkit-box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.5);
-		box-shadow: 0 0px 5px 5px rgba(0,0,0,0.5);
-		position:fixed;
-	}
-	
-	h1{
-		font-size:22px;
-		letter-spacing:-.5px;
-		color:#ff0000;
-		height:100%;
-		line-height:50px;
-		margin-left:1.3%;
-	}
-	
-	#content{
-		float:left;
-		margin-top:50px;
-		width:100%;
-	}
-	
-	p{
-		font-size:16px;
-		line-height:24px;
-		width:97.4%;
-		margin-left:1.3%;
-		margin-bottom:20px;
-		color:#000000;
-	}
+@font-face {
+	font-family: 'franchise';
+    src: url(../fonts/franchise.eot);
+    src: url(../fonts/franchise.eot?#iefix) format('embedded-opentype'),
+         url(../fonts/franchise.woff) format('woff'),
+         url(../fonts/franchise.ttf) format('truetype');
+    font-weight:normal;
+    font-style: normal;
 }
 
-/* TABLET STYLES: PORTRAIT */
-@media only screen and (min-width: 768px) and (max-width: 959px){
-	header{
-		width:100%;
-		height:50px;
-		background-color:#000000;
-		-moz-box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.5);
-		-webkit-box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.5);
-		box-shadow: 0 0px 5px 5px rgba(0,0,0,0.5);
-		position:fixed;
-	}
-	
-	h1{
-		font-size:22px;
-		letter-spacing:-.5px;
-		color:#ffffff;
-		height:100%;
-		line-height:50px;
-		margin-left:1.3%;
-	}
-	
-	#content{
-		float:left;
-		margin-top:50px;
-		width:100%;
-	}
-	
-	p{
-		font-size:16px;
-		line-height:24px;
-		width:97.4%;
-		margin-left:1.3%;
-		margin-bottom:20px;
-		color:#000000;
-	}
+@font-face {
+	font-family: 'wisdom';
+    src: url(../fonts/wisdom.eot);
+    src: url(../fonts/wisdom.eot?#iefix) format('embedded-opentype'),
+         url(../fonts/wisdom.woff) format('woff'),
+         url(../fonts/wisdom.ttf) format('truetype');
+    font-weight:normal;
+    font-style: normal;
 }
 
-/* TABLET STYLES: LANDSCAPE */
-@media only screen and (min-width: 960px) and (max-width: 1024px){
-	header{
-		width:100%;
-		height:50px;
-		background-color:#000000;
-		-moz-box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.5);
-		-webkit-box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.5);
-		box-shadow: 0 0px 5px 5px rgba(0,0,0,0.5);
-		position:fixed;
-	}
+/* MOBILE STYLES */
+@media only screen and (max-width: 767px){
 	
-	h1{
-		font-size:22px;
-		letter-spacing:-.5px;
-		color:#ff0000;
-		height:100%;
-		line-height:50px;
-		margin-left:1.3%;
-	}
-	
-	#content{
-		float:left;
-		margin-top:50px;
-		width:100%;
-	}
-	
-	p{
-		font-size:16px;
-		line-height:24px;
-		width:97.4%;
-		margin-left:1.3%;
-		margin-bottom:20px;
-		color:#000000;
-	}
+#frame{
+	width:320px;
+	height:480px;
+	overflow:hidden;
+	position:relative;
 }
+	
+#frameSpace{
+	width:320px;
+	height:1440px;
+	position:absolute;
+}
+
+h1{
+	font-family:'franchise';
+	color:#ffffff;
+	line-height:40px;
+	font-size:30px;
+	margin-left:10px;
+}
+
+h2{
+	color:#ffffff;
+	font-family:'wisdom';
+	font-size:44px;
+}
+
+h3{
+	color:#ffffff;
+	font-family:"Calisto MT";
+	font-size:12px;
+	line-height:20px;
+	letter-spacing:.658px;
+}
+
+h4{
+	color:#ffffff;
+	font-family:'franchise';
+	font-size:21px;
+	line-height:20px;
+	letter-spacing:.5px;
+}
+
+header{
+	width:320px;
+	height:40px;
+	background-image:url(../images/header.png);
+	background-size:100%;
+	background-position:center;
+	position:relative;
+}
+
+#welcome{
+	background-color:#11223b;
+}
+
+#home{
+	display:block;
+	width:40px;
+	height:40px;
+	background-image:url(../images/buttons/home.png);
+	background-size:100%;
+	background-position:center;
+	float:right;
+	margin-right:5px;
+}
+
+#switchView{
+	width:100px;
+	height:45px;
+	background-image:url(../images/buttons/tab.png);
+	background-size:100%;
+	background-position:center;
+	position:relative;
+	z-index:5;
+}
+
+#showList{
+	display:block;
+	width:100px;
+	height:45px;
+	background-image:url(../images/buttons/showSpotList.png);
+	background-size:100%;
+	background-position:center;
+	position:absolute;
+}
+
+#showMap{
+	display:block;
+	width:100px;
+	height:45px;
+	background-image:url(../images/buttons/showMap.png);
+	background-size:100%;
+	background-position:center;
+	position:absolute;
+}
+
+
+#goList{
+	width:320px;
+	height:50px;
+	background-color:#d5d5d5;
+	position:absolute;
+	top:430px;
+}
+
+#toggleView{
+	display:block;
+	width:320px;
+	height:50px;
+	background-image:url(../images/buttons/showList.png);
+	background-size:100%;
+	background-position:center;
+}
+
+#goHow{
+	width:320px;
+	height:50px;
+	background-color:#d5d5d5;
+	position:absolute;
+	top:910px;
+}
+
+#toggleHow{
+	display:block;
+	width:320px;
+	height:50px;
+	background-image:url(../images/buttons/showHow.png);
+	background-size:100%;
+	background-position:center;
+}
+
+#logo{
+	width:100%;
+	padding-top:150%;
+	background-image:url(../images/logo.png);
+	background-size:100%;
+	background-position:center;
+}
+
+#greeting{
+	margin-top:50px;
+	margin-bottom:30px;
+}
+
+#welcomeDescription{
+	width:185px;
+	margin-left:71px;
+	position:absolute;
+}
+
+#dive{
+	font-size:14.5px;
+}
+
+#questions{
+	margin-top:30px;
+}
+
+#view{
+	height:480px;
+	width:320px;
+}
+
+#viewFrame{
+	width:320px;
+	height:390px;
+	overflow:hidden;
+	position:relative;
+	float:left;
+	margin-top:-45px;
+}
+	
+#viewFrameSpace{
+	width:640px;
+	height:390px;
+	position:absolute;
+	background-color:#f2f2f2;
+}
+
+#list{
+	width:320px;
+	height:390px;
+	background-image:url(../images/listHome.png);
+	background-size:100%;
+	background-position:center;
+	float:right;
+}
+
+#spotAccordian{
+	width:100%;
+	height:340px;
+	margin-top:60px;
+	overflow:scroll;
+}
+
+.titleArea{
+	position:relative;
+}
+
+.titleArea{
+	width:100%;
+	height:90px;
+	background-repeat:no-repeat;
+	background-color:#393;
+}
+
+.content{
+	width:100%;
+	height:300px;
+	background-repeat:no-repeat;
+	background-color:#d5d5d5;
+}
+
+.checkBox{
+	width:60px;
+	height:60px;
+	background-color:#ffffff;
+	display:block;
+	float:left;
+	margin-left:10px;
+	margin-top:10px;
+}
+
+.spotDetails{
+	width:60px;
+	height:60px;
+	background-color:#000000;
+	display:block;
+	float:right;
+	margin-right:10px;
+	margin-top:10px;
+}
+
+#map{
+	width:320px;
+	height:390px;
+	background-image:url(../images/mapHome.png);
+	background-size:100%;
+	background-position:center;
+	float:left;
+}
+
+#googleMap{
+	width:100%;
+	height:350px;
+	margin-top:60px;
+}
+
+#steps{
+	height:480px;
+	width:320px;
+	background-image:url(../images/howBG.jpg);
+	background-size:100%;
+	background-position:center;
+}
+
+#toggleMain{
+	width:320px;
+	height:50px;
+	background-color:#d5d5d5;
+}
+
+#goMain{
+	display:block;
+	width:320px;
+	height:50px;
+	background-color:#d5d5d5;
+	background-image:url(../images/buttons/showMain.png);
+	background-size:100%;
+	background-position:center;
+}
+
+}
+
+/* TABLET STYLES */
+@media only screen and (min-width: 768px) and (max-width: 977px){
+
+}
+
 
 /* DESKTOP STYLES */
-@media only screen and (min-width: 1025px){
-	header{
-		width:100%;
-		height:50px;
-		background-color:#000000;
-		-moz-box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.5);
-		-webkit-box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.5);
-		box-shadow: 0 0px 5px 5px rgba(0,0,0,0.5);
-		position:fixed;
-	}
+@media only screen and (min-width: 978px){
 	
-	h1{
-		font-size:22px;
-		letter-spacing:-.5px;
-		color:#ffff00;
-		height:100%;
-		line-height:50px;
-		margin-left:1.3%;
-	}
-	
-	#content{
-		float:left;
-		margin-top:50px;
-		width:100%;
-	}
-	
-	p{
-		font-size:16px;
-		line-height:24px;
-		width:97.4%;
-		margin-left:1.3%;
-		margin-bottom:20px;
-		color:#000000;
-	}
 }

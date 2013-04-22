@@ -4,43 +4,509 @@
     <head>
     
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" / >
-        <title>Title</title>
+        <meta name="viewport" content="width=device-width" / >
+        <title>Mission Lemonade Application</title>
         
         <link href="css/reset.css" rel="stylesheet" type="text/css" />
         <link href="css/styles.css" rel="stylesheet" type="text/css" />
         
-        <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" type="text/javascript"></script>-->
-        <!--<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>-->
-        <!--<script type="text/javascript" src="js/jquery.mobile.custom.min.js"></script>-->
+        <script src="js/jquery-1.8.2.min.js" type="text/javascript"></script>
+        <script src="js/jquery.mobile.custom.min.js" type="text/javascript"></script>
+        
+        <script src="js/jquery.easing.1.3.js" type="text/javascript" ></script>
+        
+        
+        <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBv38BTBtwqnuXSuqnOHtI3FVD0ZomIaCA&sensor=false"></script>
+        <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=true"></script>
     
     </head>
 
     <body>
-    
-        <header>
-        	 <h1>Jacob Ferge's Application</h1>
-        </header>
+    	
+        <div id="frame">
+    	<div id="frameSpace">
         
-        <section id="content">
-        	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        	<div id="welcome">                
+            	
+                <div id="welcomeDescription">
+                
+                	<h2 id="greeting">Welcome!</h2>
+                    
+                    <h3>Thank you for downloading the
+                    Mission Lemonade App.
+                    <br><br>
+                    We have designd it to serve as
+                    your checklist and map guide
+                    for vital information as well as
+                    directions to each location.</h3>
+                    <br>
+                    <h3 id="dive">So dive in and get started!</h3>
+                    <br>
+                    <h3>Any Questions?</h3>
+                    
+                    <h4 id="questions">WWW.MISSIONLEMONADE.COM</h4>
+                
+                </div> <!-- welcomeDescription -->
+                
+                <div id="logo">
+                </div> <!-- logo -->
+                
+                <div id="goList">
+                        
+                    <a id="toggleView" href="#view"></a>
+                    
+                </div> <!-- goList -->
+                
+            </div> <!-- welcome -->
             
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <div id="view">
             
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            	<nav>
+        	
+                    <header>
+                                            
+                        <a href="#welcome" id="home"></a>
+                        
+                    </header> <!-- navBar -->
+                    
+                    <div id="switchView">
+                    	<a id="showList" href="#"></a>
+                        <a id="showMap" href="#"></a>
+                    </div> <!-- switchView -->
+                
+                </nav>
+                
+                <div id="viewFrame">
+                <div id="viewFrameSpace">
+                    
+                    <div id="map">
+                    
+                    	<div id="googleMap"></div>
+                        
+                    </div> <!-- map -->
+                    
+                    <div id="list">
+                    	
+                        <ul id="spotAccordian">
+                       
+                            <li>
+                            	<div class="titleArea" id="tomahawk">
+                                	<a href="#" class="checkBox"></a>
+                                	<a href="#" class="spotDetails" rel="0"></a>
+                                </div> <!-- tomahawk -->
+                                
+                            	<div id="tomahawkDetails" class="content">
+                                </div> <!-- tomahawkDetails -->
+                            </li>
+                            	<div class="titleArea" id="oakIsland">
+                                	<a href="#" class="checkBox"></a>
+                                	<a href="#" class="spotDetails" rel="1"></a>
+                                </div> <!-- oakIsland -->
+                                
+                            	<div id="oakIslandDetails" class="content">
+                                </div> <!-- oakIslandDetails -->
+                            <li>
+                            	<div class="titleArea" id="point">
+                                	<a href="#" class="checkBox"></a>
+                                	<a href="#" class="spotDetails" rel="2"></a>
+                                </div> <!-- tomahawk -->
+                                
+                                <div id="pointDetails" class="content">
+                                </div> <!-- pointDetails -->
+                            </li>   
+                            
+                        </ul>
+                        
+                    </div> <!-- list -->
+                
+                </div> <!-- viewFrameSpace -->
+                </div> <!-- viewFrame -->
+                
+                <div id="goHow">
+                        
+                    <a id="toggleHow" href="#how"></a>
+                    
+                </div> <!-- toggle -->
             
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div> <!-- view-->
             
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            
-        </section>
+            <div id="steps">
+            	
+                <div id="toggleMain">
+            	
+                	<a id="goMain" href="#"></a>
+                
+                </div> <!-- toggleMain -->
+                
+            </div> <!-- steps -->
+        
+        </div> <!-- frameSpace -->
+        </div> <!-- frame -->
+    
+    <script>
+	
+		//list Accordian
+		
+		var objectArray=new Array();
+		
+		objectArray[0]="#tomahawkDetails";
+		
+		objectArray[1]="#oakIslandDetails";
+		
+		objectArray[2]="#pointDetails";
+		
+		var activeObject=null;
+		
+///////////////////////////////////////////////////////////////////////////////////////////////
+	
+		$(document).ready(function() {
+			
+			$("#welcomeDescription, #goList").animate({opacity:.0}, 0);
+			$("#switchView").animate({'left':'10'}, 0);
+			$("#showList").fadeOut(0);
+			$("#viewFrameSpace").animate({'left': '-320'}, 0);
+			
+			$("#logo").animate({opacity:.05}, 1000);
+			$("#welcomeDescription, #goList").delay(1200).animate({opacity:1}, 2000);
+			
+			document.getElementById('tomahawkDetails').style.display = "none";
+			document.getElementById('oakIslandDetails').style.display = "none";
+			document.getElementById('pointDetails').style.display = "none";
+			
+		});
+		
+///////////////////////////////////////////////////////////////////////////////////////////////
 
+		//frame slider
+		
+		var numberOfSliderObjects = 3;
+		var currentSliderObject = 1;
+		var slideDistance = 480;
+		
+		$("#toggleView").on('tap', function (event) { 
+			event.preventDefault();
+			
+			if(currentSliderObject<numberOfSliderObjects){
+			  $("#frameSpace").animate({
+				top: '-='+slideDistance
+			  }, 1000, 'easeInOutExpo'); 
+			  currentSliderObject++;
+			  
+			};
+			
+		});
+		
+		$("#toggleHow").on('tap', function (event) { 
+			event.preventDefault();
+			
+			if(currentSliderObject<numberOfSliderObjects){
+			  $("#frameSpace").animate({
+				top: '-='+slideDistance
+			  }, 1000, 'easeInOutExpo'); 
+			  currentSliderObject++;
+			  
+			};
+			
+		});
+		
+		$("#home").on('tap', function (event) {
+			event.preventDefault();
+			
+			if(currentSliderObject>1){
+			  $("#frameSpace").animate({
+				top: '+='+slideDistance
+			  }, 1000, 'easeInOutExpo'); 
+			  currentSliderObject--;
+			  
+			};
+		
+		});
+		
+		$("#goMain").on('tap', function (event) {
+			event.preventDefault();
+			
+			if(currentSliderObject>1){
+			  $("#frameSpace").animate({
+				top: '+='+slideDistance
+			  }, 1000, 'easeInOutExpo'); 
+			  currentSliderObject--;
+			  
+			};
+		
+			
+		});
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+	//toggleList
+		
+	$("#showMap").on('tap', function (event) {
+		event.preventDefault();
+		
+		$("#viewFrameSpace").animate({
+			left: '0'
+			}, 1000);
+		
+		$("#switchView").animate({'left':'210'}, 1000);
+		$("#showMap").fadeOut(500);
+		$("#showList").delay(500).fadeIn(500);
+		
+	});
+	
+	//////////////////////////////////////////
+	
+	$("#showList").on('tap', function (event) {
+		event.preventDefault();
+		
+		$("#viewFrameSpace").animate({
+			left: '-320'
+			}, 1000);
+		
+		$("#switchView").animate({'left':'10'}, 1000);
+		$("#showList").fadeOut(500);
+		$("#showMap").delay(500).fadeIn(500);
+		
+	});
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+	
+	//map
+	
+	var myLocation;
+	var myCenter=new google.maps.LatLng(44.8756,-91.9192);
+	
+	var tomahawk=new google.maps.LatLng(45.472688,-89.722063);
+	var oakIsland = new google.maps.LatLng(44.954752, -89.629444);
+	var point = new google.maps.LatLng(44.532425, -89.59985);
+	
+	var menomonie=new google.maps.LatLng(44.8756,-91.9192);
+
+	function initialize()
+		{
+			// Try W3C Geolocation (Preferred)
+			  if(navigator.geolocation) {
+				browserSupportFlag = true;
+				navigator.geolocation.getCurrentPosition(function(position) {
+				  initialLocation = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
+				  map.setCenter(initialLocation);
+				}, function() {
+				  handleNoGeolocation(browserSupportFlag);
+				});
+			  }
+			  // Browser doesn't support Geolocation
+			  else {
+				browserSupportFlag = false;
+				handleNoGeolocation(browserSupportFlag);
+			  }
+			  
+			  function handleNoGeolocation(errorFlag) {
+				if (errorFlag == true) {
+				  alert("Geolocation service failed.");
+				  initialLocation = myCenter;
+				} else {
+				  alert("Your browser doesn't support geolocation.");
+				  initialLocation = myCenter;
+				}
+				map.setCenter(initialLocation);
+			  }
+			
+			var mapProp = {
+				
+				center: myLocation,
+				zoom:6,
+				minZoom:6,
+				maxZoom:13,
+				scrollwheel:false,
+				tilt:0,
+				mapTypeId:google.maps.MapTypeId.ROADMAP,
+			  
+				zoomControl:true,
+				mapTypeControl:false,
+				scaleControl:false,
+				streetViewControl:false,
+				overviewMapControl:false,
+				rotateControl:false,
+			  
+			  };
+			  
+			var map=new google.maps.Map(document.getElementById("googleMap"), mapProp);
+			
+			var markerMe=new google.maps.Marker({
+				
+				position:myCenter,
+				icon:'images/hammer.png',
+				animation:google.maps.Animation.DROP,
+			
+			});
+			
+				markerMe.setMap(map);
+				
+			var markerTomahawk=new google.maps.Marker({
+				
+				position:tomahawk,
+				icon:'images/spotIcon.png',
+				animation:google.maps.Animation.DROP,
+			
+			});
+			
+				markerTomahawk.setMap(map);
+			
+			var markerOak=new google.maps.Marker({
+				
+				position:oakIsland,
+				icon:'images/spotIcon.png',
+				animation:google.maps.Animation.DROP,
+			
+			});
+			
+				markerOak.setMap(map);
+			
+			var markerPoint=new google.maps.Marker({
+				
+				position:point,
+				icon:'images/spotIcon.png',
+				animation:google.maps.Animation.DROP,
+			
+			});
+			
+				markerPoint.setMap(map);
+			
+			var stylesArray =[
+				
+				{
+					"featureType": "landscape.man_made",
+					"elementType": "geometry.fill",
+					"stylers": [
+					  { "visibility": "on" },
+					  { "hue": "#11223b" },
+					  { "saturation": "-100" },
+					]
+				  },{
+					"featureType": "poi",
+					"stylers": [
+					  { "visibility": "off" }
+					]
+				  },{
+					"featureType": "road",
+					"elementType": "geometry.fill",
+					"stylers": [
+					  { "hue": "#11223b" }
+					]
+				  },{
+					"featureType": "road",
+					"elementType": "labels.text.stroke",
+					"stylers": [
+					  { "visibility": "off" },
+					  { "hue": "#11223b" }
+					]
+				  },{
+					"featureType": "water",
+					"stylers": [
+					  { "hue": "#11223b" },
+					  { "saturation": "50" },
+					]
+				  },{
+				}
+			]
+			
+			map.setOptions({styles: stylesArray});
+			
+			google.maps.event.addListener(markerMe,'click',function() {
+				
+				map.setZoom(11);
+				map.panTo(markerMe.getPosition());
+				
+			});
+			
+			google.maps.event.addListener(markerOak,'click',function() {
+				
+				map.setZoom(11);
+				map.panTo(markerOak.getPosition());
+				
+			});
+			
+			google.maps.event.addListener(markerTomahawk,'click',function() {
+				
+				map.setZoom(11);
+				map.panTo(markerTomahawk.getPosition());
+				
+			});
+			
+			google.maps.event.addListener(markerPoint,'click',function() {
+				
+				map.setZoom(9);
+				map.panTo(markerPoint.getPosition());
+				
+			});
+			
+		}
+	
+	google.maps.event.addDomListener(window, 'load', initialize);
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+	//accordian
+	
+	$("#spotAccordian .spotDetails").on('tap', function(event){
+			showObjectOfInterest($(this).attr('rel'));
+		});
+		
+		function showObjectOfInterest(sectionNumber){
+			
+			if(activeObject==null){
+				
+				$(objectArray[sectionNumber]).slideToggle(1000);
+				
+				activeObject = objectArray[sectionNumber];
+				
+			} else {
+				
+				$(activeObject).stop(true);
+				
+					if(activeObject==objectArray[sectionNumber]){
+				
+						$(activeObject).slideToggle(1000);
+						
+						activeObject = null;
+						
+					} else {
+						
+						$(activeObject).slideToggle(1000); 
+						
+						$(objectArray[sectionNumber]).delay(1000).slideToggle(1000);
+						
+						activeObject = objectArray[sectionNumber];
+						
+					}
+			}
+		};
+		
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+	//checkBox toggle
+	
+	var checkBox = false;
+	
+	$('.checkBox').on('tap', function(event){
+	
+		if(checkBox == true){
+			$(this).css('background-color', '#333');
+			checkBox = false;
+			}
+		
+		else {
+			$(this).css('background-color', '#ffffff');
+			checkBox = true;
+			}
+		
+		event.preventDefault();
+		
+	});
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+	
+	</script>
+        
     </body>
 
 </html>
