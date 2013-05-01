@@ -17,7 +17,6 @@
         
         
         <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBv38BTBtwqnuXSuqnOHtI3FVD0ZomIaCA&sensor=false"></script>
-        <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=true"></script>
     
     </head>
 
@@ -91,43 +90,127 @@
                        
                             <li>
                             	<div class="titleArea" id="tomahawk">
-                                	<a href="#" class="checkBox"></a>
+                                	<a href="#" class="checkBox" id="cbTomahawk"></a>
                                 	<a href="#" class="spotDetails" rel="0"></a>
                                 </div> <!-- tomahawk -->
                                 
                             	<div id="tomahawkDetails" class="content">
+                                	
+                                    <div id="previewTomahawk" class="spotPhoto"></div> <!-- spotPhoto -->
+                                    
+                                    <div class="spotInfo">
+                                    	
+                                        <div class="spotTextHolder">
+                                        	<div class="spotTextSlider" id="textTomahawk">
+                                            	
+                                                <a href="#" class="spotText2" id="textTomahawk2">
+                                                </a> <!-- spotText2-->
+                                                
+                                                <a href="#" class="spotText1" id="textTomahawk1">
+                                                </a> <!-- spotText1-->
+                                                
+                                            </div> <!-- spotTextSlider-->
+                                        </div > <!-- spotTextHolder-->
+                                        
+                                    	<a href="#" class="goMap"></a>
+                                        
+                                    </div> <!-- spotInfo -->
+                                    
                                 </div> <!-- tomahawkDetails -->
                             </li>
                             
                             <li>
                             	<div class="titleArea" id="oakIsland">
-                                	<a href="#" class="checkBox"></a>
+                                	<a href="#" class="checkBox" id="cbOak"></a>
                                 	<a href="#" class="spotDetails" rel="1"></a>
                                 </div> <!-- oakIsland -->
                                 
                             	<div id="oakIslandDetails" class="content">
+                                	
+                                    <div id="previewOakIsland" class="spotPhoto"></div> <!-- spotPhoto -->
+                                    
+                                    <div class="spotInfo">
+                                    	
+                                        <div class="spotTextHolder">
+                                        	<div class="spotTextSlider" id="textOak">
+                                            	
+                                                <a href="#" class="spotText2" id="textOak2">
+                                                </a> <!-- spotText2-->
+                                                
+                                                <a href="#" class="spotText1" id="textOak1">
+                                                </a> <!-- spotText1-->
+                                                
+                                            </div> <!-- spotTextSlider-->
+                                        </div > <!-- spotTextHolder-->
+                                    	                                        
+                                    	<a href="#" class="goMap"></a>
+                                        
+                                    </div> <!-- spotInfo -->
+                                    
                                 </div> <!-- oakIslandDetails -->
                             </li>
                             
                             <li>
                             	<div class="titleArea" id="kennedy">
-                                	<a href="#" class="checkBox"></a>
+                                	<a href="#" class="checkBox" id="cbKennedy"></a>
                                 	<a href="#" class="spotDetails" rel="2"></a>
                                 </div> <!-- kennedy -->
                                 
                             	<div id="kennedyDetails" class="content">
+                                	
+                                    <div id="previewKennedy" class="spotPhoto"></div> <!-- spotPhoto -->
+                                    
+                                    <div class="spotInfo">
+                                    	
+                                        <div class="spotTextHolder">
+                                        	<div class="spotTextSlider" id="textKennedy">
+                                            	
+                                                <a href="#" class="spotText2" id="textKennedy2">
+                                                </a> <!-- spotText2-->
+                                                
+                                                <a href="#" class="spotText1" id="textKennedy1">
+                                                </a> <!-- spotText1-->
+                                                
+                                            </div> <!-- spotTextSlider-->
+                                        </div > <!-- spotTextHolder-->
+                                    	                                        
+                                    	<a href="#" class="goMap"></a>
+                                        
+                                    </div> <!-- spotInfo -->
+                                    
                                 </div> <!-- kennedyDetails -->
                             </li>
                             
                             <li>
-                            	<div class="titleArea" id="point">
-                                	<a href="#" class="checkBox"></a>
+                            	<div class="titleArea" id="menomonie">
+                                	<a href="#" class="checkBox" id="cbMenomonie"></a>
                                 	<a href="#" class="spotDetails" rel="3"></a>
                                 </div> <!-- tomahawk -->
                                 
-                                <div id="pointDetails" class="content">
-                                </div> <!-- pointDetails -->
-                            </li>   
+                            	<div id="menomonieDetails" class="content">
+                                	
+                                    <div id="previewMenomonie" class="spotPhoto"></div> <!-- spotPhoto -->
+                                    
+                                    <div class="spotInfo">                  
+                                    	
+                                        <div class="spotTextHolder">
+                                        	<div class="spotTextSlider" id="textMenomonie">
+                                            	
+                                                <a href="#" class="spotText2" id="textMenomonie2">
+                                                </a> <!-- spotText2-->
+                                                
+                                                <a href="#" class="spotText1" id="textMenomonie1">
+                                                </a> <!-- spotText1-->
+                                                
+                                            </div> <!-- spotTextSlider-->
+                                        </div > <!-- spotTextHolder-->                      
+                                        
+                                    	<a href="#" class="goMap"></a>
+                                        
+                                    </div> <!-- spotInfo -->
+                                    
+                                </div> <!-- menomonieDetails -->
+                            </li>
                             
                         </ul>
                         
@@ -163,13 +246,10 @@
 		
 		var objectArray=new Array();
 		
-		objectArray[0]="#tomahawkDetails";
-		
-		objectArray[1]="#oakIslandDetails";
-		
-		objectArray[2]="#kennedyDetails";
-		
-		objectArray[3]="#pointDetails";
+			objectArray[0]="#tomahawkDetails";
+			objectArray[1]="#oakIslandDetails";
+			objectArray[2]="#kennedyDetails";
+			objectArray[3]="#menomonieDetails";
 		
 		var activeObject=null;
 		
@@ -188,7 +268,7 @@
 			document.getElementById('tomahawkDetails').style.display = "none";
 			document.getElementById('oakIslandDetails').style.display = "none";
 			document.getElementById('kennedyDetails').style.display = "none";
-			document.getElementById('pointDetails').style.display = "none";
+			document.getElementById('menomonieDetails').style.display = "none";
 			
 		});
 		
@@ -204,53 +284,54 @@
 			event.preventDefault();
 			
 			if(currentSliderObject<numberOfSliderObjects){
-			  $("#frameSpace").animate({
-				top: '-='+slideDistance
-			  }, 1000, 'easeInOutExpo'); 
-			  currentSliderObject++;
-			  
+				
+				$("#frameSpace").stop(true);	
+				$("#frameSpace").animate({
+					top: '-='+slideDistance
+					
+				}, 1000, 'easeInOutExpo'); 
+			  		currentSliderObject++;
 			};
-			
 		});
 		
 		$("#toggleHow").on('tap', function (event) { 
 			event.preventDefault();
 			
 			if(currentSliderObject<numberOfSliderObjects){
-			  $("#frameSpace").animate({
-				top: '-='+slideDistance
-			  }, 1000, 'easeInOutExpo'); 
-			  currentSliderObject++;
+				
+				$("#frameSpace").stop(true);	
+				$("#frameSpace").animate({
+					top: '-='+slideDistance
+				}, 1000, 'easeInOutExpo'); 
+					currentSliderObject++;
 			  
 			};
-			
 		});
 		
 		$("#home").on('tap', function (event) {
 			event.preventDefault();
 			
 			if(currentSliderObject>1){
-			  $("#frameSpace").animate({
-				top: '+='+slideDistance
-			  }, 1000, 'easeInOutExpo'); 
-			  currentSliderObject--;
+				$("#frameSpace").stop(true);
+				$("#frameSpace").animate({
+					top: '+='+slideDistance
+				}, 1000, 'easeInOutExpo'); 
+					currentSliderObject--;
 			  
 			};
-		
 		});
 		
 		$("#goMain").on('tap', function (event) {
 			event.preventDefault();
 			
 			if(currentSliderObject>1){
-			  $("#frameSpace").animate({
-				top: '+='+slideDistance
-			  }, 1000, 'easeInOutExpo'); 
-			  currentSliderObject--;
+				$("#frameSpace").stop(true);
+				$("#frameSpace").animate({
+					top: '+='+slideDistance
+				}, 1000, 'easeInOutExpo'); 
+					currentSliderObject--;
 			  
 			};
-		
-			
 		});
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
@@ -260,6 +341,7 @@
 	$("#showMap").on('tap', function (event) {
 		event.preventDefault();
 		
+		$("#viewFrameSpace").stop(true);	
 		$("#viewFrameSpace").animate({
 			left: '0'
 			}, 1000);
@@ -275,6 +357,7 @@
 	$("#showList").on('tap', function (event) {
 		event.preventDefault();
 		
+		$("#viewFrameSpace").stop(true);
 		$("#viewFrameSpace").animate({
 			left: '-320'
 			}, 1000);
@@ -289,47 +372,19 @@
 	
 	//map
 	
-	var myLocation;
-	var myCenter=new google.maps.LatLng(44.8756,-91.9192);
+	var myCenter=new google.maps.LatLng(44.871047,-91.925838);
 	
 	var tomahawk=new google.maps.LatLng(45.472688,-89.722063);
 	var oakIsland = new google.maps.LatLng(44.954752, -89.629444);
-	var point = new google.maps.LatLng(44.532425, -89.59985);
-	
 	var menomonie=new google.maps.LatLng(44.8756,-91.9192);
+	var kennedy=new google.maps.LatLng(44.903566,-89.593163);
 
 	function initialize()
 		{
-			// Try W3C Geolocation (Preferred)
-			  if(navigator.geolocation) {
-				browserSupportFlag = true;
-				navigator.geolocation.getCurrentPosition(function(position) {
-				  initialLocation = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
-				  map.setCenter(initialLocation);
-				}, function() {
-				  handleNoGeolocation(browserSupportFlag);
-				});
-			  }
-			  // Browser doesn't support Geolocation
-			  else {
-				browserSupportFlag = false;
-				handleNoGeolocation(browserSupportFlag);
-			  }
-			  
-			  function handleNoGeolocation(errorFlag) {
-				if (errorFlag == true) {
-				  alert("Geolocation service failed.");
-				  initialLocation = myCenter;
-				} else {
-				  alert("Your browser doesn't support geolocation.");
-				  initialLocation = myCenter;
-				}
-				map.setCenter(initialLocation);
-			  }
 			
 			var mapProp = {
 				
-				center: myLocation,
+				center: myCenter,
 				zoom:6,
 				minZoom:6,
 				maxZoom:13,
@@ -378,15 +433,25 @@
 			
 				markerOak.setMap(map);
 			
-			var markerPoint=new google.maps.Marker({
+			var markerMenomonie=new google.maps.Marker({
 				
-				position:point,
+				position:menomonie,
 				icon:'images/spotIcon.png',
 				animation:google.maps.Animation.DROP,
 			
 			});
 			
-				markerPoint.setMap(map);
+				markerMenomonie.setMap(map);
+			
+			var markerKennedy=new google.maps.Marker({
+				
+				position:kennedy,
+				icon:'images/spotIcon.png',
+				animation:google.maps.Animation.DROP,
+			
+			});
+			
+				markerKennedy.setMap(map);
 			
 			var stylesArray =[
 				
@@ -430,29 +495,44 @@
 			
 			google.maps.event.addListener(markerMe,'click',function() {
 				
-				map.setZoom(11);
+				map.setZoom(13);
 				map.panTo(markerMe.getPosition());
 				
 			});
 			
 			google.maps.event.addListener(markerOak,'click',function() {
 				
-				map.setZoom(11);
+				map.setZoom(13);
 				map.panTo(markerOak.getPosition());
+				
+				window.open("http://goo.gl/maps/eZ06P");
 				
 			});
 			
 			google.maps.event.addListener(markerTomahawk,'click',function() {
 				
-				map.setZoom(11);
+				map.setZoom(13);
 				map.panTo(markerTomahawk.getPosition());
+				
+				window.open("http://goo.gl/maps/I4sE5");
 				
 			});
 			
-			google.maps.event.addListener(markerPoint,'click',function() {
+			google.maps.event.addListener(markerMenomonie,'click',function() {
 				
-				map.setZoom(9);
-				map.panTo(markerPoint.getPosition());
+				map.setZoom(13);
+				map.panTo(markerMenomonie.getPosition());
+				
+				window.open("http://goo.gl/maps/npweY");
+				
+			});
+			
+			google.maps.event.addListener(markerKennedy,'click',function() {
+				
+				map.setZoom(13);
+				map.panTo(markerKennedy.getPosition());
+				
+				window.open("http://goo.gl/maps/YtZm7");
 				
 			});
 			
@@ -472,6 +552,7 @@
 			
 			if(activeObject==null){
 				
+				$(activeObject).stop(true);	
 				$(objectArray[sectionNumber]).slideToggle(1000);
 				
 				activeObject = objectArray[sectionNumber];
@@ -481,13 +562,15 @@
 				$(activeObject).stop(true);
 				
 					if(activeObject==objectArray[sectionNumber]){
-				
+						
+						$(activeObject).stop(true);	
 						$(activeObject).slideToggle(1000);
 						
 						activeObject = null;
 						
 					} else {
 						
+						$(activeObject).stop(true);	
 						$(activeObject).slideToggle(1000); 
 						
 						$(objectArray[sectionNumber]).delay(1000).slideToggle(1000);
@@ -502,31 +585,104 @@
 
 	//checkBox toggle
 	
-	var checkBox = false;
+	var checkboxes=new Array();
+	
+		checkboxes[0]="cbTomahawk";
+		checkboxes[1]="cbOak";
+		checkboxes[2]="cbKennedy";
+		checkboxes[3]="cbMenomonie";
+	
+	var cbStates=new Array();
+	
+		cbStates[0]=false;
+		cbStates[1]=false;
+		cbStates[2]=false;
+		cbStates[3]=false;
+	
+	// loop through check box array to find string match
 	
 	$('.checkBox').on('tap', function(event){
+		
+		// get id
 	
-		if(checkBox == true){
+			var cb = $(this).attr('id');
+				
+		for (i=0;i<checkboxes.length;i++) {
 			
-			$(this).css('background-image', 'url(images/buttons/checkboxChecked.png)');
-			
-			checkBox = false;
-			
-			}
+			// find state of control 
+						
+			if(checkboxes[i] == cb){
+				
+				if(cbStates[i] == false){
+								
+					$("#"+cb).css('background-image', 'url(images/buttons/checkboxChecked.png)');
+				
+					cbStates[i] = true;
+				
+				} else {
+										
+					$("#"+cb).css('background-image', 'url(images/buttons/checkbox.png)');
+					
+					cbStates[i] = false; 
 		
-		else {
-			
-			$(this).css('background-image', 'url(images/buttons/checkbox.png)');
-			
-			checkBox = true;
-			
-			}
-		
-		event.preventDefault();
-		
+				}	
+			};
+		};
 	});
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
+	
+	//spotTextHolder
+	
+	var texts=new Array();
+	
+		texts[0]="textTomahawk";
+		texts[1]="textOak";
+		texts[2]="textKennedy";
+		texts[3]="textMenomonie";
+	
+	var textStates=new Array();
+	
+		textStates[0]=false;
+		textStates[1]=false;
+		textStates[2]=false;
+		textStates[3]=false;
+	
+	// loop through check box array to find string match
+	
+	$('.spotTextSlider').on('tap', function(event){
+		
+		// get id
+	
+			var textSlider = $(this).attr('id');
+				
+		for (i=0;i<texts.length;i++) {
+			
+			// find state of control 
+						
+			if(texts[i] == textSlider){
+								
+				if(textStates[i] == false){
+					
+					$("#"+textSlider).stop(true);			
+					$("#"+textSlider).animate({'left':'-190'}, 500);
+				
+					textStates[i] = true;
+				
+				} else {
+					
+					$("#"+textSlider).stop(true);
+					$("#"+textSlider).animate({'left':'0'}, 500);
+					
+					textStates[i] = false; 
+		
+				}	
+			};
+		};
+	});
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+
 	
 	</script>
         

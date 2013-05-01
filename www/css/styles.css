@@ -234,7 +234,7 @@ header{
 
 .content{
 	width:100%;
-	height:300px;
+	height:250px;
 	background-repeat:no-repeat;
 	background-color:#d5d5d5;
 }
@@ -248,7 +248,7 @@ header{
 	display:block;
 	float:left;
 	margin-left:10px;
-	margin-top:5px;
+	margin-top:10px;
 }
 
 .spotDetails{
@@ -260,11 +260,122 @@ header{
 	display:block;
 	float:right;
 	margin-right:10px;
+	margin-top:15px;
+}
+
+.spotPhoto{
+	width:320px;
+	height:130px;
+	background-color:#FFFF00;
+}
+
+.spotInfo{
+	width:320px;
+	height:130px;
+	background-color:#f2f2f2;
+}
+
+.spotTextHolder{
+	height:100px;
+	width:190px;
 	margin-top:10px;
+	margin-left:10px;
+	float:left;
+	position:relative;
+	overflow:hidden;
+}
+
+.spotTextSlider{
+	height:100px;
+	width:380px;
+	float:left;
+	position:absolute;
+	left:-190px;
+}
+
+.spotText1{
+	display:block;
+	height:100px;
+	width:190px;
+	float:left;
+}
+
+.spotText2{
+	display:block;
+	background-color:#ffffff;
+	height:100px;
+	width:190px;
+	float:left;
+}
+
+#textTomahawk1{
+	background-image:url(../images/textTomahawk1.png);
+	background-size:100%;
+	background-position:center;
+}
+
+#textTomahawk2{
+	background-image:url(../images/textTomahawk2.png);
+	background-size:100%;
+	background-position:center;
+}
+
+#textOak1{
+	background-image:url(../images/textOak1.png);
+	background-size:100%;
+	background-position:center;
+}
+
+#textOak2{
+	background-image:url(../images/textTomahawk2.png);
+	background-size:100%;
+	background-position:center;
+}
+
+#textKennedy1{
+	background-image:url(../images/textKennedy1.png);
+	background-size:100%;
+	background-position:center;
+}
+
+#textKennedy2{
+	background-image:url(../images/textTomahawk2.png);
+	background-size:100%;
+	background-position:center;
+}
+
+#textMenomonie1{
+	background-image:url(../images/textMenomonie1.png);
+	background-size:100%;
+	background-position:center;
+}
+
+#textMenomonie2{
+	background-image:url(../images/textTomahawk2.png);
+	background-size:100%;
+	background-position:center;
+}
+
+.goMap{
+	display:block;
+	width:100px;
+	height:100px;
+	margin-top:10px;
+	margin-right:10px;
+	background-image:url(../images/buttons/goMap.png);
+	background-size:100%;
+	background-position:center;
+	float:right;
 }
 
 #tomahawk{
 	background-image:url(../images/spotTomahawk.jpg);
+	background-size:100%;
+	background-position:center;
+}
+
+#previewTomahawk{
+	background-image:url(../images/previewTomahawk.jpg);
 	background-size:100%;
 	background-position:center;
 }
@@ -275,14 +386,32 @@ header{
 	background-position:center;
 }
 
+#previewOakIsland{
+	background-image:url(../images/previewOakIsland.jpg);
+	background-size:100%;
+	background-position:center;
+}
+
 #kennedy{
 	background-image:url(../images/spotKennedy.jpg);
 	background-size:100%;
 	background-position:center;
 }
 
-#point{
-	background-image:url(../images/spotPoint.jpg);
+#previewKennedy{
+	background-image:url(../images/previewKennedy.jpg);
+	background-size:100%;
+	background-position:center;
+}
+
+#menomonie{
+	background-image:url(../images/spotMenomonie.jpg);
+	background-size:100%;
+	background-position:center;
+}
+
+#previewMenomonie{
+	background-image:url(../images/previewMenomonie.jpg);
 	background-size:100%;
 	background-position:center;
 }
