@@ -259,86 +259,87 @@
 		
 ///////////////////////////////////////////////////////////////////////////////////////////////
 	
-		$(document).ready(function() {
-			
-			$("#welcomeDescription, #goList").animate({opacity:.0}, 0);
-			$("#switchView").animate({'left':'10'}, 0);
-			$("#showList").fadeOut(0);
-			$("#viewFrameSpace").animate({'left': '-320'}, 0);
-			
-			$("#logo").animate({opacity:.05}, 1000);
-			$("#welcomeDescription, #goList").delay(1200).animate({opacity:1}, 2000);
-			
-			document.getElementById('tomahawkDetails').style.display = "none";
-			document.getElementById('oakIslandDetails').style.display = "none";
-			document.getElementById('kennedyDetails').style.display = "none";
-			document.getElementById('menomonieDetails').style.display = "none";
-			
-		});
+	$(document).ready(function() {
+		
+		$("#welcomeDescription, #goList").animate({opacity:.0}, 0);
+		$("#switchView").animate({'left':'10'}, 0);
+		$("#showList").fadeOut(0);
+		$("#viewFrameSpace").animate({'left': '-320'}, 0);
+		
+		$("#logo").animate({opacity:.05}, 1000);
+		$("#welcomeDescription, #goList").delay(1200).animate({opacity:1}, 2000);
+		
+		document.getElementById('tomahawkDetails').style.display = "none";
+		document.getElementById('oakIslandDetails').style.display = "none";
+		document.getElementById('kennedyDetails').style.display = "none";
+		document.getElementById('menomonieDetails').style.display = "none";
+		
+	});
 		
 ///////////////////////////////////////////////////////////////////////////////////////////////
 
-		//frame slider
+	//frame slider
+	
+	var numberOfSliderObjects = 3;
+	var currentSliderObject = 1;
+	var slideDistance = 480;
+	
+	$("#toggleView").on('tap', function (event) { 
+		event.preventDefault();
 		
-		var numberOfSliderObjects = 3;
-		var currentSliderObject = 1;
-		var slideDistance = 480;
-		
-		$("#toggleView").on('tap', function (event) { 
-			event.preventDefault();
+		if(currentSliderObject<numberOfSliderObjects){
 			
-			if(currentSliderObject<numberOfSliderObjects){
+			$("#frameSpace").animate({
+				top: '-='+slideDistance
 				
-				$("#frameSpace").animate({
-					top: '-='+slideDistance
-					
-				}, 1000, 'easeInOutExpo'); 
-			  		currentSliderObject++;
-			};
-		});
+			}, 1000, 'easeInOutExpo'); 
+				currentSliderObject++;
+		};
+	});
+	
+	$("#toggleHow").on('tap', function (event) { 
+		event.preventDefault();
 		
-		$("#toggleHow").on('tap', function (event) { 
-			event.preventDefault();
+		if(currentSliderObject<numberOfSliderObjects){
 			
-			if(currentSliderObject<numberOfSliderObjects){
-				
-				$("#frameSpace").animate({
-					top: '-='+slideDistance
-				}, 1000, 'easeInOutExpo'); 
-					currentSliderObject++;
-			  
-			};
-		});
+			$("#frameSpace").animate({
+				top: '-='+slideDistance
+			}, 1000, 'easeInOutExpo'); 
+				currentSliderObject++;
+		  
+		};
+	});
+	
+	$("#home").on('tap', function (event) {
+		event.preventDefault();
 		
-		$("#home").on('tap', function (event) {
-			event.preventDefault();
-			
-			if(currentSliderObject>1){
-				$("#frameSpace").animate({
-					top: '+='+slideDistance
-				}, 1000, 'easeInOutExpo'); 
-					currentSliderObject--;
-			  
-			};
-		});
+		if(currentSliderObject>1){
+			$("#frameSpace").animate({
+				top: '+='+slideDistance
+			}, 1000, 'easeInOutExpo'); 
+				currentSliderObject--;
+		  
+		};
+	});
+	
+	$("#goMain").on('tap', function (event) {
+		event.preventDefault();
 		
-		$("#goMain").on('tap', function (event) {
-			event.preventDefault();
-			
-			if(currentSliderObject>1){
-				$("#frameSpace").animate({
-					top: '+='+slideDistance
-				}, 1000, 'easeInOutExpo'); 
-					currentSliderObject--;
-			  
-			};
-		});
+		if(currentSliderObject>1){
+			$("#frameSpace").animate({
+				top: '+='+slideDistance
+			}, 1000, 'easeInOutExpo'); 
+				currentSliderObject--;
+		  
+		};
+	});
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
 
 	//toggleList
 		
 	$("#showMap").on('tap', function (event) {
+		
 		event.preventDefault();
 		
 		$("#viewFrameSpace").animate({
@@ -365,6 +366,192 @@
 		$("#showMap").delay(500).fadeIn(500);
 		
 	});
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+	//accordian
+	
+	$("#spotAccordian .spotDetails").on('tap', function(event){
+			
+			event.preventDefault();
+			event.stopPropagation();
+			
+			showObjectOfInterest($(this).attr('rel'));
+		});
+		
+		function showObjectOfInterest(sectionNumber){
+			
+			if(activeObject==null){
+				
+				//console.log(activeObject);
+				
+				$(objectArray[sectionNumber]).slideToggle(1000);
+				
+				activeObject = objectArray[sectionNumber];
+				
+			} else {
+				
+				$(activeObject).stop(true);
+				
+					if(activeObject==objectArray[sectionNumber]){
+						
+						$(activeObject).slideToggle(1000);
+						
+						activeObject = null;
+						
+					} else {
+						
+						$(activeObject).slideToggle(1000); 
+						
+						$(objectArray[sectionNumber]).delay(1000).slideToggle(1000);
+						
+						activeObject = objectArray[sectionNumber];
+						
+					}
+			}
+		};
+		
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+	//checkBox toggle
+	
+	var checkboxes=new Array();
+	
+		checkboxes[0]="cbTomahawk";
+		checkboxes[1]="cbOak";
+		checkboxes[2]="cbKennedy";
+		checkboxes[3]="cbMenomonie";
+	
+	var cbStates=new Array();
+	
+		cbStates[0]=false;
+		cbStates[1]=false;
+		cbStates[2]=false;
+		cbStates[3]=false;
+	
+	// loop through check box array to find string match
+	
+	$('.checkBox').on('tap', function(event){
+		
+		event.preventDefault();
+		
+		// get id
+	
+			var cb = $(this).attr('id');
+				
+		for (i=0;i<checkboxes.length;i++) {
+			
+			// find state of control 
+						
+			if(checkboxes[i] == cb){
+				
+				if(cbStates[i] == false){
+								
+					$("#"+cb).css('background-image', 'url(images/buttons/checkboxChecked.png)');
+				
+					cbStates[i] = true;
+				
+				} else {
+										
+					$("#"+cb).css('background-image', 'url(images/buttons/checkbox.png)');
+					
+					cbStates[i] = false; 
+		
+				}	
+			};
+		};
+	});
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+	
+	//spotTextHolder
+	
+	var texts=new Array();
+	
+		texts[0]="textTomahawk";
+		texts[1]="textOak";
+		texts[2]="textKennedy";
+		texts[3]="textMenomonie";
+	
+	var textStates=new Array();
+	
+		textStates[0]=false;
+		textStates[1]=false;
+		textStates[2]=false;
+		textStates[3]=false;
+	
+	// loop through check box array to find string match
+	
+	$('.spotTextSlider').on('tap', function(event){
+		
+		event.preventDefault();
+		
+		// get id
+	
+			var textSlider = $(this).attr('id');
+			
+			event.stopPropagation();
+				
+		for (i=0;i<texts.length;i++) {
+						
+			// find state of control 
+						
+			if(texts[i] == textSlider){
+								
+				if(textStates[i] == false){
+					
+					$("#"+textSlider).animate({'left':'-190'}, 500);
+				
+					textStates[i] = true;
+				
+				} else {
+										
+					$("#"+textSlider).animate({'left':'0'}, 500);
+					
+					textStates[i] = false; 
+		
+				}	
+			};
+		};
+	});
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+	//goMap tap
+	
+		$("#mapTomahawk").on('tap', function(event){
+			
+			event.preventDefault();
+			window.open("http://goo.gl/maps/I4sE5");
+			
+		});
+		
+///////////////////////////////////////////////////////
+		
+		$("#mapOak").on('tap', function(event){
+			
+			event.preventDefault();
+			window.open("http://goo.gl/maps/eZ06P");
+			
+		});
+		
+///////////////////////////////////////////////////////
+		
+		$("#mapKennedy").on('tap', function(event){
+			
+			event.preventDefault();
+			window.open("http://goo.gl/maps/YtZm7");
+			
+		});
+		
+///////////////////////////////////////////////////////
+		
+		$("#mapMenomonie").on('tap', function(event){
+			
+			event.preventDefault();
+			window.open("http://goo.gl/maps/npweY");
+			
+		});
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
 	
@@ -537,177 +724,7 @@
 		}
 	
 	google.maps.event.addDomListener(window, 'load', initialize);
-
-///////////////////////////////////////////////////////////////////////////////////////////////
-
-	//accordian
 	
-	$("#spotAccordian .spotDetails").on('tap', function(event){
-			showObjectOfInterest($(this).attr('rel'));
-		});
-		
-		function showObjectOfInterest(sectionNumber){
-			
-			if(activeObject==null){
-				
-				$(objectArray[sectionNumber]).slideToggle(1000);
-				
-				activeObject = objectArray[sectionNumber];
-				
-			} else {
-				
-				$(activeObject).stop(true);
-				
-					if(activeObject==objectArray[sectionNumber]){
-						
-						$(activeObject).slideToggle(1000);
-						
-						activeObject = null;
-						
-					} else {
-						
-						$(activeObject).slideToggle(1000); 
-						
-						$(objectArray[sectionNumber]).delay(1000).slideToggle(1000);
-						
-						activeObject = objectArray[sectionNumber];
-						
-					}
-			}
-		};
-		
-///////////////////////////////////////////////////////////////////////////////////////////////
-
-	//checkBox toggle
-	
-	var checkboxes=new Array();
-	
-		checkboxes[0]="cbTomahawk";
-		checkboxes[1]="cbOak";
-		checkboxes[2]="cbKennedy";
-		checkboxes[3]="cbMenomonie";
-	
-	var cbStates=new Array();
-	
-		cbStates[0]=false;
-		cbStates[1]=false;
-		cbStates[2]=false;
-		cbStates[3]=false;
-	
-	// loop through check box array to find string match
-	
-	$('.checkBox').on('tap', function(event){
-		
-		// get id
-	
-			var cb = $(this).attr('id');
-				
-		for (i=0;i<checkboxes.length;i++) {
-			
-			// find state of control 
-						
-			if(checkboxes[i] == cb){
-				
-				if(cbStates[i] == false){
-								
-					$("#"+cb).css('background-image', 'url(images/buttons/checkboxChecked.png)');
-				
-					cbStates[i] = true;
-				
-				} else {
-										
-					$("#"+cb).css('background-image', 'url(images/buttons/checkbox.png)');
-					
-					cbStates[i] = false; 
-		
-				}	
-			};
-		};
-	});
-
-///////////////////////////////////////////////////////////////////////////////////////////////
-	
-	//spotTextHolder
-	
-	var texts=new Array();
-	
-		texts[0]="textTomahawk";
-		texts[1]="textOak";
-		texts[2]="textKennedy";
-		texts[3]="textMenomonie";
-	
-	var textStates=new Array();
-	
-		textStates[0]=false;
-		textStates[1]=false;
-		textStates[2]=false;
-		textStates[3]=false;
-	
-	// loop through check box array to find string match
-	
-	$('.spotTextSlider').on('tap', function(event){
-		
-		// get id
-	
-			var textSlider = $(this).attr('id');
-				
-		for (i=0;i<texts.length;i++) {
-			
-			// find state of control 
-						
-			if(texts[i] == textSlider){
-								
-				if(textStates[i] == false){
-					
-					$("#"+textSlider).animate({'left':'-190'}, 500);
-				
-					textStates[i] = true;
-				
-				} else {
-					
-					$("#"+textSlider).animate({'left':'0'}, 500);
-					
-					textStates[i] = false; 
-		
-				}	
-			};
-		};
-	});
-
-///////////////////////////////////////////////////////////////////////////////////////////////
-
-	//goMap tap
-	
-		$("#mapTomahawk").on('tap', function(event){
-			
-			window.open("http://goo.gl/maps/I4sE5");
-			
-		});
-		
-///////////////////////////////////////////////////////
-		
-		$("#mapOak").on('tap', function(event){
-			
-			window.open("http://goo.gl/maps/eZ06P");
-			
-		});
-		
-///////////////////////////////////////////////////////
-		
-		$("#mapKennedy").on('tap', function(event){
-			
-			window.open("http://goo.gl/maps/YtZm7");
-			
-		});
-		
-///////////////////////////////////////////////////////
-		
-		$("#mapMenomonie").on('tap', function(event){
-			
-			window.open("http://goo.gl/maps/npweY");
-			
-		});
-
 ///////////////////////////////////////////////////////////////////////////////////////////////
 	
 	</script>
