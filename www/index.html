@@ -22,6 +22,8 @@
 
     <body>
     	
+        <div id="container">
+    	
         <div id="frame">
     	<div id="frameSpace">
         
@@ -112,7 +114,7 @@
                                             </div> <!-- spotTextSlider-->
                                         </div > <!-- spotTextHolder-->
                                         
-                                    	<a href="#" class="goMap"></a>
+                                    	<a href="#" class="goMap" id="mapTomahawk"></a>
                                         
                                     </div> <!-- spotInfo -->
                                     
@@ -143,7 +145,7 @@
                                             </div> <!-- spotTextSlider-->
                                         </div > <!-- spotTextHolder-->
                                     	                                        
-                                    	<a href="#" class="goMap"></a>
+                                    	<a href="#" class="goMap" id="mapOak"></a>
                                         
                                     </div> <!-- spotInfo -->
                                     
@@ -174,7 +176,7 @@
                                             </div> <!-- spotTextSlider-->
                                         </div > <!-- spotTextHolder-->
                                     	                                        
-                                    	<a href="#" class="goMap"></a>
+                                    	<a href="#" class="goMap" id="mapKennedy"></a>
                                         
                                     </div> <!-- spotInfo -->
                                     
@@ -205,7 +207,7 @@
                                             </div> <!-- spotTextSlider-->
                                         </div > <!-- spotTextHolder-->                      
                                         
-                                    	<a href="#" class="goMap"></a>
+                                    	<a href="#" class="goMap" id="mapMenomonie"></a>
                                         
                                     </div> <!-- spotInfo -->
                                     
@@ -239,6 +241,8 @@
         
         </div> <!-- frameSpace -->
         </div> <!-- frame -->
+        
+        </div>  <!-- container -->
     
     <script>
 	
@@ -285,7 +289,6 @@
 			
 			if(currentSliderObject<numberOfSliderObjects){
 				
-				$("#frameSpace").stop(true);	
 				$("#frameSpace").animate({
 					top: '-='+slideDistance
 					
@@ -299,7 +302,6 @@
 			
 			if(currentSliderObject<numberOfSliderObjects){
 				
-				$("#frameSpace").stop(true);	
 				$("#frameSpace").animate({
 					top: '-='+slideDistance
 				}, 1000, 'easeInOutExpo'); 
@@ -312,7 +314,6 @@
 			event.preventDefault();
 			
 			if(currentSliderObject>1){
-				$("#frameSpace").stop(true);
 				$("#frameSpace").animate({
 					top: '+='+slideDistance
 				}, 1000, 'easeInOutExpo'); 
@@ -325,7 +326,6 @@
 			event.preventDefault();
 			
 			if(currentSliderObject>1){
-				$("#frameSpace").stop(true);
 				$("#frameSpace").animate({
 					top: '+='+slideDistance
 				}, 1000, 'easeInOutExpo'); 
@@ -341,7 +341,6 @@
 	$("#showMap").on('tap', function (event) {
 		event.preventDefault();
 		
-		$("#viewFrameSpace").stop(true);	
 		$("#viewFrameSpace").animate({
 			left: '0'
 			}, 1000);
@@ -357,7 +356,6 @@
 	$("#showList").on('tap', function (event) {
 		event.preventDefault();
 		
-		$("#viewFrameSpace").stop(true);
 		$("#viewFrameSpace").animate({
 			left: '-320'
 			}, 1000);
@@ -552,7 +550,6 @@
 			
 			if(activeObject==null){
 				
-				$(activeObject).stop(true);	
 				$(objectArray[sectionNumber]).slideToggle(1000);
 				
 				activeObject = objectArray[sectionNumber];
@@ -563,14 +560,12 @@
 				
 					if(activeObject==objectArray[sectionNumber]){
 						
-						$(activeObject).stop(true);	
 						$(activeObject).slideToggle(1000);
 						
 						activeObject = null;
 						
 					} else {
 						
-						$(activeObject).stop(true);	
 						$(activeObject).slideToggle(1000); 
 						
 						$(objectArray[sectionNumber]).delay(1000).slideToggle(1000);
@@ -664,14 +659,12 @@
 								
 				if(textStates[i] == false){
 					
-					$("#"+textSlider).stop(true);			
 					$("#"+textSlider).animate({'left':'-190'}, 500);
 				
 					textStates[i] = true;
 				
 				} else {
 					
-					$("#"+textSlider).stop(true);
 					$("#"+textSlider).animate({'left':'0'}, 500);
 					
 					textStates[i] = false; 
@@ -683,6 +676,39 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
 
+	//goMap tap
+	
+		$("#mapTomahawk").on('tap', function(event){
+			
+			window.open("http://goo.gl/maps/I4sE5");
+			
+		});
+		
+///////////////////////////////////////////////////////
+		
+		$("#mapOak").on('tap', function(event){
+			
+			window.open("http://goo.gl/maps/eZ06P");
+			
+		});
+		
+///////////////////////////////////////////////////////
+		
+		$("#mapKennedy").on('tap', function(event){
+			
+			window.open("http://goo.gl/maps/YtZm7");
+			
+		});
+		
+///////////////////////////////////////////////////////
+		
+		$("#mapMenomonie").on('tap', function(event){
+			
+			window.open("http://goo.gl/maps/npweY");
+			
+		});
+
+///////////////////////////////////////////////////////////////////////////////////////////////
 	
 	</script>
         
