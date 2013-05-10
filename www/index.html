@@ -346,11 +346,11 @@
 		
 		$("#viewFrameSpace").animate({
 			left: '0'
-			}, 1000);
+			}, 500);
 		
-		$("#switchView").animate({'left':'210'}, 1000);
-		$("#showMap").fadeOut(500);
-		$("#showList").delay(500).fadeIn(500);
+		$("#switchView").animate({'left':'210'}, 500);
+		$("#showMap").fadeOut(250);
+		$("#showList").delay(250).fadeIn(250);
 		
 	});
 	
@@ -361,11 +361,11 @@
 		
 		$("#viewFrameSpace").animate({
 			left: '-320'
-			}, 1000);
+			}, 500);
 		
-		$("#switchView").animate({'left':'10'}, 1000);
-		$("#showList").fadeOut(500);
-		$("#showMap").delay(500).fadeIn(500);
+		$("#switchView").animate({'left':'10'}, 500);
+		$("#showList").fadeOut(250);
+		$("#showMap").delay(250).fadeIn(250);
 		
 	});
 
@@ -388,7 +388,7 @@
 				
 				//console.log(activeObject);
 				
-				$(objectArray[sectionNumber]).slideToggle(500);
+				$(objectArray[sectionNumber]).slideToggle(250);
 				
 				activeObject = objectArray[sectionNumber];
 				
@@ -398,15 +398,15 @@
 				
 					if(activeObject==objectArray[sectionNumber]){
 						
-						$(activeObject).slideToggle(500);
+						$(activeObject).slideToggle(250);
 						
 						activeObject = null;
 						
 					} else {
 						
-						$(activeObject).slideToggle(500); 
+						$(activeObject).slideToggle(250); 
 						
-						$(objectArray[sectionNumber]).delay(500).slideToggle(500);
+						$(objectArray[sectionNumber]).delay(250).slideToggle(250);
 						
 						activeObject = objectArray[sectionNumber];
 						
